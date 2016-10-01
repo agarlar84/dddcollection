@@ -1,0 +1,19 @@
+{
+  "name": "agarlar84/dddcollections",
+  "description": "Helper to deal with domain collections",
+  "type": "library",
+  "homepage": "https://github.com/agarlar84/dddcollections",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alex Garcia",
+      "email": "alexgarlar@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4"
+  },
+  "autoload": {
+    "psr-4": {"DDDCollections": "src/"}
+  }
+}
