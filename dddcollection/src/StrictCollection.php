@@ -1,12 +1,8 @@
 <?php
+
 namespace DDDCollection;
 
-use ArrayAccess;
-use ArrayIterator;
-use Countable;
-use IteratorAggregate;
-
-class Collection implements IteratorAggregate, Countable, ArrayAccess
+class StrictCollection
 {
     public static $collectibleObjectsClassName = '';
     protected $collection = [];
@@ -23,6 +19,10 @@ class Collection implements IteratorAggregate, Countable, ArrayAccess
 
     public function add($anElementToCollect)
     {
+        if (!is_a($anElementToCollect, static::$collectibleObjectsClassName)) {
+            throw new \Exception('Object is not a '.static::$collectibleObjectsClassName.' class');
+        }
+
         $this->collection[] = $anElementToCollect;
 
         return $this;
@@ -56,7 +56,9 @@ class Collection implements IteratorAggregate, Countable, ArrayAccess
 
     public function offsetSet($offset, $value)
     {
-        $this->collection[$offset] = $value;
+        if (is_a($value, static::$collectibleObjectsClassName)) {
+            $this->collection[$offset] = $value;
+        }
     }
 
     public function offsetUnset($offset)
