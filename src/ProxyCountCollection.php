@@ -9,7 +9,7 @@ class ProxyCountCollection extends Collection
     public function __construct($objClassName, $count, ...$variadicElementsToCollect)
     {
         $this->callableCount = $count;
-        parent::__construct($objClassName, $variadicElementsToCollect);
+        parent::__construct($objClassName, ...$variadicElementsToCollect);
     }
 
     public function count()
