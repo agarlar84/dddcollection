@@ -10,7 +10,7 @@ class StrictCollection extends Collection
     public function add($anElementToCollect)
     {
         if (!is_a($anElementToCollect, static::$collectibleObjectsClassName)) {
-            throw new \Exception('Object is not a '.static::$collectibleObjectsClassName.' class');
+            throw new IncorrectItemToAddException(static::$collectibleObjectsClassName, $anElementToCollect);
         }
 
         $this->collection[] = $anElementToCollect;
