@@ -1,5 +1,5 @@
 {
-  "name": "agarlar84/dddcollections",
+  "name": "agarlar84/dddcollection",
   "description": "Helper to deal with domain collections",
   "type": "library",
   "homepage": "https://github.com/agarlar84/dddcollections",
@@ -14,6 +14,6 @@
     "php": ">=5.4"
   },
   "autoload": {
-    "psr-4": {"DDDCollections\\": "src/"}
+    "psr-4": {"DDDCollection\\": "src/"}
   }
 }
