@@ -6,9 +6,6 @@ use DDDCollection\Exception\IncorrectItemToAddException;
 
 class StrictCollection extends Collection
 {
-    public static $collectibleObjectsClassName = '';
-    protected $collection = [];
-
     public function add($anElementToCollect)
     {
         if (!is_a($anElementToCollect, static::$collectibleObjectsClassName)) {
