@@ -1,6 +1,6 @@
 <?php
 
-namespace DDDCollection;
+namespace DDDCollection\Exception;
 
 class IncorrectItemToAddException extends \Exception
 {

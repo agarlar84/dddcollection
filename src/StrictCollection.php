@@ -2,6 +2,8 @@
 
 namespace DDDCollection;
 
+use DDDCollection\Exception\IncorrectItemToAddException;
+
 class StrictCollection extends Collection
 {
     public static $collectibleObjectsClassName = '';

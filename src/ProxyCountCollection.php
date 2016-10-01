@@ -4,16 +4,16 @@ namespace DDDCollection;
 
 class ProxyCountCollection extends Collection
 {
-    private $count;
+    private $callableCount;
 
     public function __construct($objClassName, $count, ...$variadicElementsToCollect)
     {
-        $this->count = $count;
+        $this->callableCount = $count;
         parent::__construct($objClassName, $variadicElementsToCollect);
     }
 
     public function count()
     {
-        return $this->count;
+        return call_user_func($this->callableCount);
     }
 }
